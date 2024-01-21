@@ -1,0 +1,53 @@
+@import "../../VideoPlayer/root.module.scss";
+
+.progressContainer {
+  @extend .rootPlayer;
+  @include flex();
+  justify-content: flex-start;
+  width: 100%;
+  height: 8px;
+  pointer-events: stroke;
+  cursor: pointer;
+
+  .progress {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50%;
+    width: 0%;
+    width: 100%;
+    border-radius: 100px;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 0px 5px black;
+    transition: height 0.3s, margin 0.3s;
+
+    cursor: pointer;
+  }
+
+  &[data-focus="true"] {
+    & > * {
+      height: 100%;
+    }
+    .container {
+      height: 100%;
+      .progressIndicator {
+        box-shadow: 0px 0px 5px black;
+        margin-inline-end: -0.9em;
+      }
+    }
+  }
+  &:hover {
+    & > * {
+      height: 100%;
+    }
+    .container {
+      height: 100%;
+      .progressIndicator {
+        box-shadow: 0px 0px 5px black;
+        margin-inline-end: -0.9em;
+      }
+    }
+  }
+}

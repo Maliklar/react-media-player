@@ -1,0 +1,34 @@
+.container {
+  position: fixed;
+  filter: blur(20px);
+  z-index: -1;
+
+  &[data-scrolling="true"] {
+    &::after {
+      box-shadow: inset 0px 0px 500px 1000px rgb(18, 18, 18);
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    box-shadow: inset 0px 0px 500px 300px rgb(18, 18, 18);
+    transition: box-shadow 10s;
+  }
+
+  .ambientImage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,66 @@
+$animation-time: 0.3s;
+@mixin controlButtonMixin() {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size(32px);
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  .iconImage {
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.rootPlayer {
+  position: relative;
+  box-sizing: border-box;
+  & > * {
+    box-sizing: border-box;
+  }
+}
+
+@mixin flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin size($size) {
+  height: $size;
+  min-height: $size;
+  max-height: $size;
+  width: $size;
+  max-width: $size;
+  min-width: $size;
+  aspect-ratio: 1;
+}
+
+.video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+
+.video::-webkit-media-controls-play-button {
+  display: none;
+}
+.video::-webkit-media-controls-timeline {
+  display: none;
+}
+.video::-webkit-media-controls-current-time-display {
+  display: none;
+}
+.video::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+.video::-webkit-media-controls-mute-button {
+  display: none;
+}
+.video::-webkit-media-controls-toggle-closed-captions-button {
+  display: none;
+}
+.video::-webkit-media-controls-volume-slider {
+  display: none;
+}
